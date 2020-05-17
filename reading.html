@@ -1,0 +1,142 @@
+<html>
+ <head>
+ <link href="style.css" rel="stylesheet">
+ <script type="text/javascript" src="select-cards.js"></script>
+ <script type="text/javascript" src="seed-random.js"></script>
+ <script>
+  function generate_seeded_qrandom(seed, n) {
+        // wait before querying for qrandom number
+        // wait time depends on `seed`
+        // max 5 second
+        setTimeout(function () {
+         return 'done';
+        }, 10 * seed);
+        let xhr = new XMLHttpRequest();
+        var result;
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                nums = JSON.parse(this.responseText)["data"];
+                var i;
+                for (i = 0; i < n; i++) {
+                    rand01 = nums[i] * 1.0 / 65535
+                    card = cards.splice(Math.floor(rand01 * cards.length), 1)
+                    console.log(card[0]);
+                    var img = document.createElement("img");
+                    img.src = card[0];
+                    console.log("im"+i);
+                    var src = document.getElementById("im"+i);
+                    src.appendChild(img);
+                }
+            }
+        };
+        // returns random number between 1 and 65535
+        xhr.open('GET', 'https://qrng.anu.edu.au/API/jsonI.php?length=3&type=uint16');
+        xhr.send();
+        return result;
+  };
+  var x = getQueryVariable("x");
+  console.log(x);
+  //const randomElement = array[Math.floor(Math.random() * array.length)];
+  Math.seedrandom(x);
+  var nums = generate_seeded_qrandom(Math.random(), 3);
+  console.log(nums);
+  var cards = [
+    "Images/25 - c0HTkPM - Works.jpg",
+    "Images/19 - fIpGQjA - The Moon.jpg",
+    "Images/30 - FZuXy7Q - Prudence.jpg",
+    "Images/61 - rUUuv8g - Princess of Cups.jpg",
+    "Images/23 - 14UCh8H - Ace of Disks.jpg",
+    "Images/72 - U4S0sV3 - Swiftness.jpg",
+    "Images/34 - LgH4eNW - Prince of Disks.jpg",
+    "Images/39 - EGw9O7R - Sorrow.jpg",
+    "Images/66 - OzIeXbz - Dominion.jpg",
+    "Images/33 - G2UoJCm - Princess of Disks.jpg",
+    "Images/13 - qZdagJJ - The Hanged Man.jpg",
+    "Images/60 - V9O9Bhf - Satiety.jpg",
+    "Images/20 - 9dUzqch - The Sun.jpg",
+    "Images/7 - qJME96h - The Lovers.jpg",
+    "Images/32 - HRMFivV - Wealth.jpg",
+    "Images/36 - j9PvAhv - Knight of Disks.jpg",
+    "Images/71 - jzndNEz - Valor.jpg",
+    "Images/22 - xk3daZ0 - The Universe.jpg",
+    "Images/40 - vP5vn33 - Truce.jpg",
+    "Images/45 - 9PAfEeB - Cruelty.jpg",
+    "Images/1 - YpeA2KZ - The Fool.jpg",
+    "Images/26 - sEcSmz2 - Power.jpg",
+    "Images/6 - kWi80nY - The Hierophant.jpg",
+    "Images/35 - mRS6d7W - Queen of Disks.jpg",
+    "Images/64 - 1eMheTi - Knight of Cups.jpg",
+    "Images/8 - W5aDYHk - The Chariot.jpg",
+    "Images/58 - vuInr1g - Indolence.jpg",
+    "Images/27 - 5yfQQCS - Worry.jpg",
+    "Images/56 - 4jm2par - Pleasure.jpg",
+    "Images/59 - PqM57Qh - Happiness.jpg",
+    "Images/4 - DK92KSe - The Empress.jpg",
+    "Images/67 - MJt20oR - Virtue.jpg",
+    "Images/14 - OpJXLBp - Death.jpg",
+    "Images/74 - Mi1mKK5 - Oppression.jpg",
+    "Images/65 - 1MJQY8h - Ace of Wands.jpg",
+    "Images/16 - xjyJINf - The Devil.jpg",
+    "Images/38 - ELa1eZT - Peace.jpg",
+    "Images/2 - yHbY87W - The Magician.jpg",
+    "Images/49 - Akf4OBq - Queen of Swords.jpg",
+    "Images/24 - 8T87xRk - Change.jpg",
+    "Images/51 - rcQxmzI - Ace of Cups.jpg",
+    "Images/10 - bBpxcH3 - The Hermit.jpg",
+    "Images/44 - b13TCFz - Interference.jpg",
+    "Images/42 - UIMRPsC - Science.jpg",
+    "Images/5 - SZb7Dsy - The Emperor.jpg",
+    "Images/50 - QdgD08S - Knight of Swords.jpg",
+    "Images/68 - WswKoi6 - Completion.jpg",
+    "Images/46 - n6bBOsS - Ruin.jpg",
+    "Images/47 - GXe6bPM - Princess of Swords.jpg",
+    "Images/53 - stkSyuX - Abundance.jpg",
+    "Images/11 - ZlCtXoQ - Fortune.jpg",
+    "Images/43 - 7Jzn2ch - Futility.jpg",
+    "Images/9 - EgR9Rgb - Adjustment.jpg",
+    "Images/52 - l5Wemr5 - Love.jpg",
+    "Images/57 - c1sCWS0 - Debauch.jpg",
+    "Images/28 - Rv6f3I1 - Success.jpg",
+    "Images/29 - wnfa8dl - Failure.jpg",
+    "Images/77 - TuANjCH - Queen of Wands.jpg",
+    "Images/76 - xpuyCcg - Prince of Wands.jpg",
+    "Images/69 - ZYITLct - Strife.jpg",
+    "Images/21 - TQIpPfc - The Aeon.jpg",
+    "Images/12 - EN0RF3t - Lust.jpg",
+    "Images/73 - CM9VWom - Strength.jpg",
+    "Images/3 - AKTbgQv - The Priestess.jpg",
+    "Images/54 - SqRSeCD - Luxury.jpg",
+    "Images/48 - XtVxD5S - Prince of Swords.jpg",
+    "Images/31 - j0W876T - Gain.jpg",
+    "Images/62 - YtKJzLc - Prince of Cups.jpg",
+    "Images/17 - 3LkzgtF - The Tower.jpg",
+    "Images/78 - lecsDaX - Knight of Wands.jpg",
+    "Images/70 - QpotTQl - Victory.jpg",
+    "Images/55 - bHjsuBo - Disappointment.jpg",
+    "Images/18 - 0UZl3lO - The Star.jpg",
+    "Images/41 - R6t50gB - Defeat.jpg",
+    "Images/63 - PXODjz4 - Queen of Cups.jpg",
+    "Images/75 - Eh6ut1k - Princess of Wands.jpg",
+    "Images/37 - vISwPqt - Ace of Swords.jpg",
+    "Images/15 - uh51bfk - Art.jpg",
+  ];
+ </script>
+ </head>
+ <body>
+    <!--<h1>Thoth Tarot Reading</h1>-->
+    <div class="row">
+        <div class="column">
+          <h1></h1>
+          <div id="im0"></div>
+        </div>
+        <div class="column">
+            <h1></h1>
+            <div id="im1"></div>
+        </div>
+      <div class="column">
+            <h1></h1>
+            <div id="im2"></div>
+        </div>
+    </div>
+ </body>
+</html>

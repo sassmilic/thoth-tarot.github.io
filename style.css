@@ -1,0 +1,29 @@
+{
+    box-sizing: border-box;
+}
+/* Set additional styling options for the columns*/
+.column {
+float: left;
+width: 33%;
+}
+  .column img {
+max-height: 80%;
+max-width: 80%;
+}
+  
+  .column h1 {
+  text-align: center
+  }
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+  
+ .row{
+  margin: auto;
+  text-align: center;
+ width: 80%;
+ padding: 2em;
+  }
