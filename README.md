@@ -3,4 +3,5 @@
 
 This is so I can give my friends virtual readings during Coronachan :D
 
-**Disclaimer:** my web development skills are super basic; pls don't judge.
+#### Disclaimer:
+My web development skills are super basic; pls don't judge.
