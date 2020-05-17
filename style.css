@@ -1,29 +1,91 @@
-{
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolatap');
+
+* {
+  box-sizing: border-box;
 }
-/* Set additional styling options for the columns*/
+
+form {
+    position: relative;
+    z-index: 1;
+    background-color: #f2f2f2;
+    width: 30%;
+    margin: 100px auto 100px;
+    padding: 45px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+input,label { 
+  outline: 0;
+  width: 100%;
+  border: 0;
+  margin: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 2em;
+}
+
+input[type="number"]::placeholder {  
+    /* Firefox, Chrome, Opera */ 
+    text-align: center; 
+}
+
+input[type="number"]:-ms-input-placeholder {  
+    /* Internet Explorer 10-11 */ 
+    text-align: center; 
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+
+.page-heading{ display: none; }
+
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #cecece;
+  border-radius: 12px;
+  outline: 0;
+  width: 100%;
+  padding: 1em 2em;
+  white-space: normal;
+  font-size: 1.3em;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  font-family: 'Inconsolata', monospace;
+}
+
+.button:hover,.form button:active,.form button:focus {
+  background: #cecece;
+}
+
 .column {
-float: left;
-width: 33%;
+  float: left;
+  width: 33%;
 }
-  .column img {
-max-height: 80%;
-max-width: 80%;
+
+.column img {
+  max-height: 80%;
+  max-width: 80%;
 }
   
-  .column h1 {
+.column h1 {
   text-align: center
-  }
+}
 
 .row:after {
-content: "";
-display: table;
-clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
   
- .row{
+.row{
   margin: auto;
   text-align: center;
- width: 80%;
- padding: 2em;
-  }
+  width: 80%;
+  padding: 2em;
+ }

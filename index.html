@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
-<body>
+<head>
+    <link href="style.css" rel="stylesheet">
+</head>
 
-<form action="reading.html" method="GET">
-	Input a number:
-    <input type="number" name="x" />
-    <br>
-    <input type="submit" value="I give my permission to have my cards read." />
-</form>
+<body>
+<div class="container">
+  <form action="reading.html" method="GET">
+    <div class="row-index">
+      <div class="col-75">
+        <input type="number" id="x" name="x" placeholder="Input a number.">
+      </div>
+    </div>
+    <div class="row-index">
+      <input type="submit" class="button" value="I give my permission to have my cards read.">
+    </div>
+  </form>
+</div>
 
 </body>
 </html>
